@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <article>
+        <img src="logo.png" alt="">
+        <div>
+            <b class="name">Name</b>
+            <br>
+            <span class="speciality">speciality</span>
+            <br>
+            <span class="phone">phone</span>
+        </div>
+    </article>
+</body>
+<script>
+    const vistCard = document.querySelector("article")
+    document.querySelector(".name").textContent = prompt("enter your name")
+    document.querySelector(".speciality").textContent = prompt("enter your card number")
+    document.querySelector(".phone").textContent = prompt("enter your pin")
+
+
+    const clone = vistCard.cloneNode(true)
+    vistCard.remove()
+    for (let i = 0; i < 36; i++) {
+        document.body.appendChild(clone.cloneNode(true))
+        if ((i + 1) % 3 === 0) {
+            document.body.appendChild(document.createElement("br"));
+        }
+    }
+
+</script>
+
+</html>
